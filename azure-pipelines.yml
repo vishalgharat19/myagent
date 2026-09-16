@@ -1,0 +1,19 @@
+trigger:
+  - main
+
+pool:
+  name: Default
+  demands:
+    - Agent.Name -equals windows
+
+steps:
+  - script: echo "Hello from Self-Hosted Windows Agent"
+    displayName: 'Hello World'
+
+  - script: hostname
+    displayName: 'Check Hostname'
+
+  - script: |
+      echo "Operating System:"
+      ver
+    displayName: 'Check Windows Version'
